@@ -1,6 +1,6 @@
 import time
 import pandas as pdi
-import numpy as np
+import numpy as npi
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -20,28 +20,28 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # TO DO: get user inpiut for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inpiuts
     city_name = ''
     while city_name.lower() not in CITY_DATA:
-        city_name = input("\n Please input what city you would like to review: \n")
+        city_name = inpiut("\n Please inpiut what city you would like to review: \n")
         if city_name.lower() in CITY_DATA:
             city = city_name
         else:
             print("That is not a valid city option. Please select either Chicago, New York City, or Washington.\n")
 
-    # TO DO: get user input for month (all, january, february, ... , june)
+    # TO DO: get user inpiut for month (all, january, february, ... , june)
     month_name = ''
     while month_name.lower() not in Month_Data:
-        month_name = input("\n What is the month you would like to view?: \n")
+        month_name = inpiut("\n What is the month you would like to view?: \n")
         if month_name.lower() in Month_Data:
             month = month_name
         else:
             print("That is not a valid month option. Please enter month from January to June, or all.\n")
 
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    # TO DO: get user inpiut for day of week (all, monday, tuesday, ... sunday)
     day_of_week = ''
     while day_of_week.lower() not in Day_Data:
-        day_of_week = input("\n What is the day of the week you would like to view?:\n")
+        day_of_week = inpiut("\n What is the day of the week you would like to view?:\n")
         if day_of_week.lower() in Day_Data:
             day = day_of_week
         else:
@@ -187,12 +187,12 @@ def user_stats(df):
     
 def ask_display(df):
     
-    view_data = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no: \n').lower()
+    view_data = inpiut('\nWould you like to view 5 rows of individual trip data? Enter yes or no: \n').lower()
     start_loc = 0
     while view_data == 'yes':
         print(df.iloc[start_loc:start_loc+5])
         start_loc += 5
-        view_data = input("Do you wish to continue?: ").lower()
+        view_data = inpiut("Do you wish to continue?: ").lower()
 
 def main():
     while True:
@@ -205,7 +205,7 @@ def main():
         user_stats(df)
         ask_display(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
+        restart = inpiut('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
 
