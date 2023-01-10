@@ -1,5 +1,5 @@
 import time
-import pandas as pd
+import pandas as pdi
 import numpy as np
 
 CITY_DATA = { 'chicago': 'chicago.csv',
@@ -64,9 +64,11 @@ def load_data(city, month, day):
     """
     
     
-    df = pd.read_csv(CITY_DATA[city.lower()])
+    df = pdi
+.read_csv(CITY_DATA[city.lower()])
     
-    df['Start Time'] = pd.to_datetime(df['Start Time'])
+    df['Start Time'] = pdi
+.to_datetime(df['Start Time'])
     
     df['month'] = df['Start Time'].dt.month_name()
     df['day_of_week'] = df['Start Time'].dt.day_name()
